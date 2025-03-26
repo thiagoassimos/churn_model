@@ -34,18 +34,17 @@ python src/main.py
   - Removidas colunas irrelevantes (`ID_CLIENTE`, `NOME`, `LOCALIDADE`).
   - Removida a coluna (`TEM_RECLAMACAO`) pois apresentou uma correlação 1 com a variável `CHURN`. Correlações perfeitas, geralmente podem provocar vazamento de dados durante o treinamento, ou seja, isso significa que a variável já contém a resposta. Sendo assim, mantê-la no treinamento, certamente irá provocar resultados que foram "decorados" pelo modelo, o que não é bom sinal quando pretendemos generalizações.
   - Codificadas variáveis categóricas (`GENERO`, `TIPO_CARTAO`).
-  - Normalizadas variáveis numéricas para melhor desempenho do modelo.
   - Optei por não excluir qualquer informação das variáveis que foram mantidas no projeto.
 - **Modelagem:**
-  - Utilizado **XGBoostClassifier**, por sua capacidade de capturar relações não lineares e performar bem com classes desbalanceadas.
+  - Utilizado **`XGBoostClassifier`**, por sua capacidade de capturar relações não lineares e performar bem com classes desbalanceadas.
 - **Validação:**
   - Divisão 80/20 entre treino e teste, respectivamente.
-  - Utilizadas métricas de Precision, Recall, F1-Score, Matriz de Confusão e Curva ROC.
+  - Utilizadas métricas de `Precision`, `Recall`, `F1-Score`, `Matriz de Confusão` e `Curva ROC`.
 
 
 ## Resultados e conclusões
 
-A ideia é identificar o maior número possível de clientes tipo churn para que possamos tomar ações preventivas para retê-los. Neste caso, é interessante obter um bom resultado para recall. Se o modelo errar e não identificar um cliente que seria churn (falso negativo), isso pode resultar em perda de clientes. Perder clientes sem identificá-los a tempo pode ser muito custoso, especialmente se há algo que se possa fazer para mantê-los. 
+A ideia é identificar o maior número possível de clientes tipo churn para que possamos tomar ações preventivas para retê-los. Neste caso, é interessante obter um bom resultado para `Recall`. Se o modelo errar e não identificar um cliente que seria churn (falso negativo), isso pode resultar em perda de clientes. Perder clientes sem identificá-los a tempo pode ser muito custoso, especialmente se há algo que se possa fazer para mantê-los. 
 
 
 ## Métricas e interpretação
@@ -61,7 +60,7 @@ A ideia é identificar o maior número possível de clientes tipo churn para que
 
 - **Recall boa**: O modelo está conseguindo detectar a maioria dos clientes que churnam, o que é **bom se a empresa quiser evitar perder clientes**.
 - **Precision moderada**: Porém, o modelo **comete muitos falsos positivos**, ou seja, prevê que um cliente vai churn, mas ele na verdade fica.
-- **F1-Score razoável**: Como a recall é maior que a Precision, o modelo está priorizando **detectar churns ao invés de evitar falsos alarmes**.
+- **F1-Score moderada**: Como a recall é maior que a Precision, o modelo está priorizando **detectar churns ao invés de evitar falsos alarmes**.
 - **AUC bom**: Em geral, o modelo tem **boa capacidade de separação** entre churn e não churn.
 
 ## Utilidade do modelo
