@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# churn_model
-=======
 # Análise e previsão de churn de clientes
 
 Este projeto implementa um modelo de Machine Learning para prever a saída de clientes (churn) de uma instituição financeira. O modelo é baseado em um conjunto de dados contendo informações sobre clientes, como: idade, saldo bancário, número de produtos utilizados e histórico de reclamações, entre outras.
@@ -72,5 +69,3 @@ Se a empresa **quer minimizar a perda de clientes a qualquer custo** e pode arca
 
 ## Sugestão de como melhorar a `precision` (reduzir falsos positivos)
 - Ajustar o threshold para ser mais conservador, por exemplo, aumentar de 0.5 para 0.6 ou 0.7.
-
->>>>>>> Initial commit
